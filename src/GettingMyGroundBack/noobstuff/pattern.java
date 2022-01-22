@@ -1,4 +1,6 @@
-package GettingMyGroundBack;
+package GettingMyGroundBack.noobstuff;
+
+import java.util.Scanner;
 
 public class pattern {
     public static void main(String[] args){
@@ -29,7 +31,14 @@ public class pattern {
         Object
         Interface
          */
-
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int i=0;i<n;i++){
+            System.out.println("****");
+            for (int j=0;j<i;j++){
+                System.out.print("*");
+            }
+        }
 
     }
 }
