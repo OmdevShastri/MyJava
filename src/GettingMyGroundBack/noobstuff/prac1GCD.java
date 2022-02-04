@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class prac1GCD {
     public static int gcd(int a,int b){
+        //Euclidean algorithm
         if (b==0){
             return a;
         }
