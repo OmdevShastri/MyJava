@@ -17,6 +17,15 @@ public class strBuild {
 
         sb.delete(2,3);
         System.out.println(sb);
+        // reverse a string
+        for (int i=0; i<sb.length(); i++){
+            int back = sb.length()-1-i;
+            char frontchar =sb.charAt(i);
+            char backchar = sb.charAt(back);
+            sb.setCharAt(i,backchar);
+            sb.setCharAt(back, frontchar);
+
+        }
 
     }
 }
