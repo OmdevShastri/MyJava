@@ -25,7 +25,7 @@
             System.out.println(1/2*l*h);
         }
     }
-    class Circle extends Shape{ //Hierarchical inheritance
+    class Circle extends Shape{ //Hierarchial inheritance
         public void are(int r){
             System.out.println((3.14)*r*r);
         }
