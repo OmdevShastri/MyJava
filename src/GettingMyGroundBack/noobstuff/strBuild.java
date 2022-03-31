@@ -1,6 +1,6 @@
 package GettingMyGroundBack.noobstuff;
 
-public class strBuild {
+public class    strBuild {
     public static void main(String []args){
         StringBuilder sb = new StringBuilder("Tony");
         System.out.println(sb);

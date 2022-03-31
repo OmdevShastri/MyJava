@@ -7,7 +7,7 @@ public class StringQ {
         Scanner sc = new Scanner(System.in);
         String email = sc.nextLine();
         String username ="";
-
+        //if()
         for (int i =0; i<email.length();i++){
             if (email.charAt(i)=='@'){
                 break;
