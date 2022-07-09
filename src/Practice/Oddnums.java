@@ -16,7 +16,7 @@ public class Oddnums {
             //return count;
             return (high+1)/2 - low/2;
         }
-        public static void main(String args){
+        public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
             int low = sc.nextInt();
             int high = sc.nextInt();
