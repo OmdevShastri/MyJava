@@ -3,7 +3,7 @@ package Javapaid;
 import java.util.Scanner;
 
 public class basicsJava {
-    public static void main(String args[]){
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 //        boolean bobo = sc.nextBoolean();
 //        System.out.println(bobo);
