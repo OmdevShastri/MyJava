@@ -2,14 +2,12 @@ package Javapaid.Arrays;
 
 public class didSomethinRepeat {
     public static boolean atLeastTwice(int [] arr){
-        int check = 0;
+        int check;
         for (int i = 0; i < arr.length-1; i++) {
             check= arr[i];
             for (int j = i+1; j < arr.length; j++) {
                 if (arr[j]==check){
                     return true;
-                }else {
-                    continue;
                 }
             }
         }
