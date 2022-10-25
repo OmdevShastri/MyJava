@@ -27,5 +27,13 @@ public class StringFuncs {
         String str = "tensile";
         System.out.println(str.substring(0,3));
 
+        String [] fruits = {"apples","banana","mango"};
+        String largest = fruits[0];
+        for (int i = 1; i < fruits.length; i++) {
+            if (largest.compareTo(fruits[i])<0){
+                largest= fruits[i];
+            }
+        }
+        System.out.println(largest);
     }
 }
