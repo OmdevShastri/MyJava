@@ -2,7 +2,7 @@ package Javapaid.Strings;
 
 public class StringBuilderLesson {
     public static String toUpper(String str){
-        StringBuilder sb = new StringBuilder("");
+        StringBuilder sb = new StringBuilder();
 
         char ch = Character.toUpperCase(str.charAt(0));
         sb.append(ch);
@@ -18,8 +18,8 @@ public class StringBuilderLesson {
         return sb.toString();
     }
     public static void main(String[] args) {
-        StringBuilder sb = new StringBuilder("");
-        String str = new String("hello, i'm your person");
+        StringBuilder sb = new StringBuilder();
+        String str = "hello, i'm your person";
 
         for (char i = 'a'; i <= 'z'; i++) {
             sb.append(i);
