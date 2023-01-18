@@ -11,7 +11,7 @@ public class BasicStrings {
         return true;
     }
     public static void main(String[] args) {
-        String str = "om";  
+        String str = "0m";
         System.out.println(isPalindrome(str));
     }
 }
