@@ -9,23 +9,9 @@ public class LowerCaseVowelCount {
             char ch = str.charAt(i);
             //if ((ch == 'a') || (ch == 'e') || (ch == 'i') || (ch == 'o') || (ch = 'u')) count++;
             switch (ch) {
-                case 'a':
-                    count++;
-                    break;
-                case 'e':
-                    count++;
-                    break;
-                case 'i':
-                    count++;
-                    break;
-                case 'o':
-                    count++;
-                    break;
-                case 'u':
-                    count++;
-                    break;
-                default:
-                    continue;
+                case 'a', 'e', 'i', 'o', 'u' -> count++;
+                default -> {
+                }
             }
         }
         return count;
