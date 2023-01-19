@@ -3,11 +3,22 @@ package Javapaid.Strings;
 import java.util.Scanner;
 
 public class LowerCaseVowelCount {
-    public static int theCount(String str){
-        int count =0;
+    public static int theCount(String str) {
+        int count = 0;
         for (int i = 0; i < str.length(); i++) {
-           char ch = str.charAt(i);
-           if ((ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch = 'u')) count++;
+            char ch = str.charAt(i);
+            //if ((ch == 'a') || (ch == 'e') || (ch == 'i') || (ch == 'o') || (ch = 'u')) count++;
+            switch (ch) {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    count++;
+                    break;
+                default:
+                    continue;
+            }
         }
         return count;
     }
