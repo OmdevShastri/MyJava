@@ -22,8 +22,8 @@ public class subArrs {
             }
             System.out.println();
         }
-        System.out.println("The total number of sub arrays are: "+total);
-        System.out.println("And Max sub Array sum is: "+max_Sum);
+        System.out.println("The total number of sub arrays are: " + total);
+        System.out.println("And Max sub Array sum is: " + max_Sum);
     }
     public static int prefixSum(int[] arr){
         //O(n^2)
