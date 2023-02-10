@@ -18,12 +18,22 @@ public class OperationsGetSetClear {
         int bitMask = ~(1<<i);
         return n & bitMask;
     }
+    public static int updateIthBit(int n, int i, int newBt){
+//        if (newBt == 0)
+//            return clearBit(n,i);
+//       else
+//           return setBit(n,i);
+        int bitMask = newBt<<i;
+        return n | bitMask;
 
+
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         System.out.println(getBit(n, 3));
         System.out.println(setBit(n, 3));
         System.out.println(clearBit(n, 3));
+        System.out.println(updateIthBit(10,2,1));
     }
 }
