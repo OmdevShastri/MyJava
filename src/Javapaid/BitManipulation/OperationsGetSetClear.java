@@ -23,12 +23,13 @@ public class OperationsGetSetClear {
 //            return clearBit(n,i);
 //       else
 //           return setBit(n,i);
-        int bitMask = newBt<<i;
-        return n | bitMask;
+        int bitMask = 1<<i;
+
+        return (n & ~bitMask) | ((newBt<<i) & bitMask);
 
 
     }
-    public static int clearIthBits(int n, int i){
+    public static int clearLastIthBits(int n, int i){
         int bitmask = (~0)<<i;
         return n & bitmask;
     }
@@ -39,7 +40,7 @@ public class OperationsGetSetClear {
         System.out.println(getBit(n, 3));
         System.out.println(setBit(n, 3));
         System.out.println(clearBit(n, 3));
-        System.out.println(updateIthBit(10,2,1));
-        System.out.println(clearIthBits(n, 2));
+        System.out.println(updateIthBit(7,3,1));
+        System.out.println(clearLastIthBits(n, 2));
     }
 }
