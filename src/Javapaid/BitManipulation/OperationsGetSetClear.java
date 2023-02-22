@@ -28,12 +28,18 @@ public class OperationsGetSetClear {
 
 
     }
+    public static int clearIthBits(int n, int i){
+        int bitmask = (~0)<<i;
+        return n & bitmask;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Eneter an Integer");
         int n = sc.nextInt();
         System.out.println(getBit(n, 3));
         System.out.println(setBit(n, 3));
         System.out.println(clearBit(n, 3));
         System.out.println(updateIthBit(10,2,1));
+        System.out.println(clearIthBits(n, 2));
     }
 }
