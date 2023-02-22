@@ -33,6 +33,13 @@ public class OperationsGetSetClear {
         int bitmask = (~0)<<i;
         return n & bitmask;
     }
+    public static int clearIBitsInRange(int n, int i, int j){
+        int a = ((~0)<<(j+1));
+        int b = (1<<i)-1;
+        int bitMask = a|b;
+
+        return bitMask & n;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Eneter an Integer");
@@ -42,5 +49,6 @@ public class OperationsGetSetClear {
         System.out.println(clearBit(n, 3));
         System.out.println(updateIthBit(7,3,1));
         System.out.println(clearLastIthBits(n, 2));
+        System.out.println(clearIBitsInRange(10, 2,4));
     }
 }
