@@ -16,7 +16,7 @@ public class PrintNthPascalTriangle {
         int n = sc.nextInt();
         ArrayList<Integer> ans= new ArrayList<>();
 
-        //nums just printing
+          //nums just printing
 //        for (int j=0;j<n;j++){
 //            System.out.print(fact(n-1)/(fact((n-1-j))*fact(j)) + " ");
 //        }
