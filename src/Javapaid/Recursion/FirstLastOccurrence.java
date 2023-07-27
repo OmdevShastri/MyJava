@@ -37,6 +37,6 @@ public class FirstLastOccurrence {
         if (arr[i]==key){
             return i;
         }
-        return occ(arr, key, i-1);
+        return occLast(arr, key, i-1);
     }
 }
