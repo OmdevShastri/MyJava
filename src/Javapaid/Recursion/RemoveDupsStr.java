@@ -14,7 +14,7 @@ public class RemoveDupsStr {
 
         //work
         char charCurr = str.charAt(i);
-        if (mapA[charCurr-'a']==true) {
+        if (mapA[charCurr - 'a']) {
             removeDups(str, i+1, result, mapA);
         }else {
             mapA[charCurr-'a'] = true;
