@@ -2,7 +2,7 @@ package Javapaid.DivideAndConcoer;
 
 import java.util.Scanner;
 
-public class MergeSort {
+public class MergeSort { //O(nlog(n) // O(n) // depth first
 
     public static void prtArr(int [] Arr){
         for (int i=0; i< Arr.length; i++) {
