@@ -1,36 +1,35 @@
-package Javapaid.DivideAndConcoer;
+package Javapaid.DivideAndConquer;
 
-import java.util.Scanner;
+public class MergeSortStringArr { //O(nlog(n) // O(n) // depth first // changes required
 
-public class MergeSort { //O(nlog(n) // O(n) // depth first
-
-    public static void prtArr(int [] Arr){
+    public static void prtArr(String [] Arr){
         for (int i=0; i< Arr.length; i++) {
             System.out.print(Arr[i]+" ");
         }
         System.out.println();
     }
 
-    public static void mSort(int [] arr, int si, int ei){
+    public static void mSortStr(String [] arr, int si, int ei){
         //base
         if (si >= ei) {
             return;
         }
         //work
         int mid = si+((ei-si)/2);
-        mSort(arr, si, mid); // left
-        mSort(arr, mid+1, ei ); //right
+        mSortStr(arr, si, mid); // left
+        mSortStr(arr, mid+1, ei ); //right
         merger(arr, si, mid, ei);
     }
 
-    public static void merger(int[] arr, int si, int mid, int ei) {
-        int [] temp = new int[(ei-si)+1];
+    public static void merger(String[] arr, int si, int mid, int ei) {
+        String [] temp = new String[(ei-si)+1];
         int i = si; //iterator for left part
         int j = mid+1; // iterator for right part
         int k = 0; //iterator for temp arr
 
         while (i<=mid && j <=ei){
-            if (arr[i]< arr[j]){
+
+            if (arr[i].charAt(0)< arr[j].charAt(0)){
                 temp[k] = arr[i];
                 i++;
             }else {
@@ -55,14 +54,10 @@ public class MergeSort { //O(nlog(n) // O(n) // depth first
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int [] arr = new int[n];
-        for (int i=0; i<n; i++ ) {
-            arr[i] = sc.nextInt();
-        }
+        String  [] arr = {"sun", "earth", "mars", "mercury"};
 
-        mSort(arr, 0,n-1);
+
+        mSortStr(arr, 0, arr.length-1);
         prtArr(arr);
     }
 }

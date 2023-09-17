@@ -1,6 +1,4 @@
-package Javapaid.DivideAndConcoer;
-
-import java.util.HashMap;
+package Javapaid.DivideAndConquer;
 
 public class MajorityElementArr {
 

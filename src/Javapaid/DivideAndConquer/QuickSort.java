@@ -1,4 +1,4 @@
-package Javapaid.DivideAndConcoer;
+package Javapaid.DivideAndConquer;
 
 public class QuickSort {
     public static void prtArr(int [] Arr){

@@ -1,4 +1,4 @@
-package Javapaid.DivideAndConcoer;
+package Javapaid.DivideAndConquer;
 
 public class SortedRotatedSearch {
     public static void main(String[] args) {
