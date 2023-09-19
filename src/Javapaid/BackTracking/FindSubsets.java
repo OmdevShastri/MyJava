@@ -2,14 +2,18 @@ package Javapaid.BackTracking;
 
 public class FindSubsets {
     public static void main(String[] args) {
-        String str = "abc";
+        String str = "abcdefg";
         findSubs(str, "", 0);
     }
 
     private static void findSubs(String str, String ans, int i) {
         //base
         if (i == str.length()) {
-            System.out.println(ans);
+            if (ans.length() == 0) {
+                System.out.println("null");
+            }else {
+                System.out.println(ans);
+            }
             return;
         }
         //yes
