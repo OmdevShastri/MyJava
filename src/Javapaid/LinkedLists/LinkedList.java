@@ -164,6 +164,49 @@ class LinkedList{
         head = prev;
     }
 
+    public Node findMid(Node Head){
+        Node slow = head;
+        Node fast = head;
+
+        while (fast !=null && fast.next !=null){
+            slow = slow.next; //+1
+            fast = fast.next.next; //+2
+
+        }
+
+        return slow;
+    }
+
+    public boolean checkPalin(){
+        if (head == null || head.next == null){
+            return true;
+        }
+        // find mid
+        Node midNode = findMid(head);
+        //reverse 2nd half
+        Node prev = null;
+        Node curr = midNode;
+        Node next;
+        while (curr !=null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node right = prev;
+        Node left = head;
+        //compare left and right
+        while (right != null){
+            if (left.data !=right.data){
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+        return true;
+
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.prtLL();
