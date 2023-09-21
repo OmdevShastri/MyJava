@@ -28,6 +28,7 @@ public class RemoveNthFromEnd extends LinkedList{
         return;
 
     }
+
     public static void main(String[] args) {
         RemoveNthFromEnd l1 = new RemoveNthFromEnd();
         l1.addFirst(1);
