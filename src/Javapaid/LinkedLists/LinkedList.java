@@ -1,7 +1,7 @@
 package Javapaid.LinkedLists;
 
 class LinkedList{
-    public class Node {
+    public static class Node {
         int data;
         Node next;
 
@@ -206,28 +206,82 @@ class LinkedList{
         return true;
 
     }
+    public static boolean isCycle(){
+        Node slow = head;
+        Node fast = head;
+
+        while (fast !=null &&fast.next != null){
+            slow = slow.next; //+1
+            fast = fast.next.next; //+2
+            if (slow == fast){
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    public static void removeCycle(){
+        //detect cycle
+        Node slow = head;
+        Node fast = head;
+        boolean cycle =false;
+        while (fast !=null &&fast.next != null){
+            slow = slow.next; //+1
+            fast = fast.next.next; //+2
+
+            if (slow == fast){
+                cycle = true;
+                break;
+            }
+        }
+        if (cycle == false){
+            return;
+        }
+        //find meeting point
+        slow =head;
+        Node prev = null;
+        while (slow != fast){
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        //remove cycle -> last.next =null
+        prev.next = null;
+    }
 
     public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
-        ll.prtLL();
-        ll.addFirst(2);
-        ll.addFirst(1);
-        ll.prtLL();
-        ll.addLast(3);
-        ll.addLast(4);
-        ll.add(2,9);
-        ll.prtLL();
-        System.out.println(ll.size);
+        //LinkedList ll = new LinkedList();
+//        ll.prtLL();
+//        ll.addFirst(2);
+//        ll.addFirst(1);
+//        ll.prtLL();
+//        ll.addLast(3);
+//        ll.addLast(4);
+//        ll.add(2,9);
+//        ll.prtLL();
+//        System.out.println(ll.size);
 
 //        ll.removeFirst();
 //        ll.prtLL();
         //ll.removeLast();
 
-        System.out.println(ll.itrSearch(3));
-        System.out.println(ll.recSearch(3));
+//        System.out.println(ll.itrSearch(3));
+//        System.out.println(ll.recSearch(3));
+//
+//        ll.reverse();
+//        ll.prtLL();
 
-        ll.reverse();
-        ll.prtLL();
+        head = new Node(1);
+        Node temp = new Node(2);
+        head.next =temp;
+        head.next.next = new Node(3);
+        head.next.next.next = temp;
+
+        System.out.println(isCycle());
+        removeCycle();
+        System.out.println(isCycle());
 
     }
 
