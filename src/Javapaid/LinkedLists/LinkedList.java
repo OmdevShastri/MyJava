@@ -308,22 +308,58 @@ class LinkedList{
 
     }
 
+    public static void makeZigZag(){
+        //find mid
+        Node slow = head;
+        Node fast = head.next;
+        while (fast !=null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node mid = slow;
 
+        //reverse 2nd half
+        Node curr = mid.next;
+        mid.next = null;
+        Node prev = null;
+        Node next;
+
+        while (curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node left = head;
+        Node right = prev;
+        Node nextL, nextR;
+
+        //alt merge - zig-zag merge
+        while (left != null && right !=null){
+            nextL = left.next;
+            left.next = right;
+            nextR = right.next;
+            right.next = nextL;
+
+            left = nextL;
+            right = nextR;
+        }
+    }
 
 
     public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
-        ll.prtLL();
-        ll.addFirst(2);
-        ll.addFirst(1);
-        //ll.prtLL();
-        ll.addLast(3);
-        ll.addLast(4);
-        ll.add(2,9);
-
-        ll.prtLL();
-        ll.head = mergeSort(ll.head);
-        ll.prtLL();
+        LinkedList l1 = new LinkedList();
+//        ll.prtLL();
+//        ll.addFirst(2);
+//        ll.addFirst(1);
+//        //ll.prtLL();
+//        ll.addLast(3);
+//        ll.addLast(4);
+//        ll.add(2,9);
+//
+//        ll.prtLL();
+//        ll.head = mergeSort(ll.head);
+//        ll.prtLL();
 //        System.out.println(ll.size);
 
 //        ll.removeFirst();
@@ -346,6 +382,16 @@ class LinkedList{
 //        removeCycle();
 //        System.out.println(isCycle());
 
+        l1.addFirst(1);
+        l1.addFirst(2);
+        l1.addFirst(3);
+        l1.addFirst(4);
+        l1.addFirst(5);
+        l1.addFirst(6);
+
+        l1.prtLL();
+        l1.makeZigZag();
+        l1.prtLL();
 
 
     }
