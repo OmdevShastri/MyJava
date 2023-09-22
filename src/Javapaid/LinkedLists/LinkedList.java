@@ -164,7 +164,7 @@ class LinkedList{
         head = prev;
     }
 
-    public Node findMid(Node Head){
+    public static Node findMid(Node Head){
         Node slow = head;
         Node fast = head;
 
@@ -235,7 +235,7 @@ class LinkedList{
                 break;
             }
         }
-        if (cycle == false){
+        if (!cycle){
             return;
         }
         //find meeting point
@@ -251,16 +251,79 @@ class LinkedList{
         prev.next = null;
     }
 
+    private static Node getMid(Node head) {
+        Node slow = head;
+        Node fast = head.next;
+
+        while (fast !=null && fast.next !=null){
+            slow = slow.next; //+1
+            fast = fast.next.next; //+2
+
+        }
+
+        return slow; //mid node
+    }
+
+    private static Node mergeHelp(Node head1, Node head2) {
+        Node mergedLL = new Node(-1);
+        Node temp = mergedLL;
+
+        while (head1 != null && head2 !=null){
+            if (head1.data <=head2.data){
+                temp.next = head1;
+                head1 = head1.next;
+                temp = temp.next;
+            }else {
+                temp.next = head2;
+                head2 = head2.next;
+                temp = temp.next;
+            }
+        }
+        while (head1 != null){
+            temp.next = head1;
+            head1 = head1.next;
+            temp = temp.next;
+        }
+        while (head2 != null){
+            temp.next = head2;
+            head2 = head2.next;
+            temp = temp.next;
+        }
+        return mergedLL.next;
+    }
+
+    public static Node mergeSort(Node head) {
+        if (head == null || head.next ==null){
+            return head;
+        }
+        //find mid
+        Node mid = getMid(head);
+        //left and right mS
+        Node rightHead = mid.next;
+        mid.next = null;
+        Node newLeft = mergeSort(head);
+        Node newRight = mergeSort(rightHead);
+
+        return mergeHelp(newLeft, newRight);
+
+    }
+
+
+
+
     public static void main(String[] args) {
-        //LinkedList ll = new LinkedList();
-//        ll.prtLL();
-//        ll.addFirst(2);
-//        ll.addFirst(1);
-//        ll.prtLL();
-//        ll.addLast(3);
-//        ll.addLast(4);
-//        ll.add(2,9);
-//        ll.prtLL();
+        LinkedList ll = new LinkedList();
+        ll.prtLL();
+        ll.addFirst(2);
+        ll.addFirst(1);
+        //ll.prtLL();
+        ll.addLast(3);
+        ll.addLast(4);
+        ll.add(2,9);
+
+        ll.prtLL();
+        ll.head = mergeSort(ll.head);
+        ll.prtLL();
 //        System.out.println(ll.size);
 
 //        ll.removeFirst();
@@ -273,15 +336,17 @@ class LinkedList{
 //        ll.reverse();
 //        ll.prtLL();
 
-        head = new Node(1);
-        Node temp = new Node(2);
-        head.next =temp;
-        head.next.next = new Node(3);
-        head.next.next.next = temp;
+//        head = new Node(1);
+//        Node temp = new Node(2);
+//        head.next =temp;
+//        head.next.next = new Node(3);
+//        head.next.next.next = temp;
+//
+//        System.out.println(isCycle());
+//        removeCycle();
+//        System.out.println(isCycle());
 
-        System.out.println(isCycle());
-        removeCycle();
-        System.out.println(isCycle());
+
 
     }
 
