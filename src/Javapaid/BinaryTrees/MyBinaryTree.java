@@ -112,6 +112,20 @@ public class MyBinaryTree {
             }
             return sumT(root.left)+sumT(root.right)+root.data;
         }
+        public static int diameter(Node root){
+            if (root==null){
+                return 0;
+            }
+
+            int ldiam = diameter(root.left);
+            int lht = height(root.left);
+            int rdiam = diameter(root.right);
+            int rht = height(root.right);
+
+            int sDiam = lht+rht+1;
+
+            return Math.max(sDiam,(Math.max(ldiam,rdiam)));
+        }
     }
 
 }

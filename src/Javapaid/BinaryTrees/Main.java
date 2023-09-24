@@ -15,8 +15,9 @@ public class Main {
 //        System.out.println();
 //        tree.levelOrder(root);
 //        System.out.println();
-        System.out.println(tree.height(root));
-        System.out.println(tree.countTNodes(root));
-        System.out.println(tree.sumT(root));
+//        System.out.println(tree.height(root));
+//        System.out.println(tree.countTNodes(root));
+//        System.out.println(tree.sumT(root));
+        System.out.println(tree.diameter(root));
     }
 }
