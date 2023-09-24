@@ -7,6 +7,16 @@ public class Main {
         MyBinaryTree.Node root= tree.buildTree(nodes);
 
 
-        tree.preOrder(root);
+//        tree.preOrder(root);
+//        System.out.println();
+//        tree.inOrder(root);
+//        System.out.println();
+//        tree.postOrder(root);
+//        System.out.println();
+//        tree.levelOrder(root);
+//        System.out.println();
+        System.out.println(tree.height(root));
+        System.out.println(tree.countTNodes(root));
+        System.out.println(tree.sumT(root));
     }
 }

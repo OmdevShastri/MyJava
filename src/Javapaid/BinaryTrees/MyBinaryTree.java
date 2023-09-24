@@ -1,4 +1,8 @@
 package Javapaid.BinaryTrees;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class MyBinaryTree {
     static class Node{
         int data;
@@ -55,6 +59,58 @@ public class MyBinaryTree {
             postOrder(root.right);
             postOrder(root.left);
             System.out.print(root.data + " ");
+        }
+        public static void levelOrder(Node root){
+            if (root ==null){
+                return;
+            }
+            Queue<Node> q = new LinkedList<>();
+            q.add(root);
+            q.add(null);
+
+            while (!q.isEmpty()){
+                Node currNode = q.remove();
+                if (currNode == null){
+                    System.out.println();
+                    if (q.isEmpty()){
+                        break;
+                    }else {
+                        q.add(null);
+                    }
+                }else {
+                    System.out.print(currNode.data+" ");
+                    if(currNode.left != null){
+                        q.add(currNode.left);
+                    }
+                    if (currNode.right!=null){
+                        q.add(currNode.right);
+                    }
+                }
+            }
+        }
+        public static int height(Node root){
+            if (root ==null){
+                return 0;
+            }
+            int lh= height(root.left);
+            int rh = height(root.right);
+
+            return Math.max(lh,rh)+1;
+        }
+        public static int countTNodes(Node root){
+            if (root==null){
+                return 0;
+            }
+            int lcount = countTNodes(root.left);
+            int rcount = countTNodes(root.right);
+
+            return lcount+rcount+1;
+        }
+        public static int sumT(Node root){
+            if (root==null){
+                return 0;
+            }
+            return sumT(root.left)+sumT(root.right)+root.data;
         }
     }
 
