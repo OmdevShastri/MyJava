@@ -18,6 +18,7 @@ public class Main {
 //        System.out.println(tree.height(root));
 //        System.out.println(tree.countTNodes(root));
 //        System.out.println(tree.sumT(root));
-        System.out.println(tree.diameter(root));
+        System.out.println(tree.diameter2(root).diam);
+        System.out.println(tree.diameter2(root).ht);
     }
 }
