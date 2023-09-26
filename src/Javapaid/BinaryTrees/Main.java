@@ -1,7 +1,7 @@
 package Javapaid.BinaryTrees;
 import Javapaid.BinaryTrees.MyBinaryTree.*;
 
-import static Javapaid.BinaryTrees.MyBinaryTree.BinaryTree.topView;
+import static Javapaid.BinaryTrees.MyBinaryTree.BinaryTree.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,6 +40,12 @@ public class Main {
         root.left.right = new Node(5);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
-        topView(root);
+        //topView(root);
+
+//        int k =3;
+//        kLevel(root,1, k);
+
+        int n1 =4, n2 =7;
+        System.out.println(lca(root, n1,n2).data);
     }
 }
