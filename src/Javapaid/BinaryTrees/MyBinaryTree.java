@@ -321,6 +321,28 @@ public class MyBinaryTree {
             return dist1+dist2;
         }
 
+        public static int kAncestor(Node root, int n, int k){
+            if (root==null){
+                return -1;
+            }
+            if (root.data==n){
+                return 0;
+            }
+            int leftDist = kAncestor(root.left, n,k);
+            int rightDist = kAncestor(root.right, n, k);
+
+            if (leftDist ==-1 && rightDist ==-1){
+                return -1;
+            }
+
+            int max = Math.max(leftDist,rightDist);
+            if (max+1 ==k){
+                System.out.println(root.data);
+            }
+            return max+1;
+
+        }
+
     }
 
 }
