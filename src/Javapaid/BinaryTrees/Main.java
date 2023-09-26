@@ -49,6 +49,9 @@ public class Main {
 //        System.out.println(lca(root, n1,n2).data);
 //        System.out.println(lca2(root, n1,n2).data);
 //        System.out.println(minDist(root,n1,n2));
-        kAncestor(root,n1,n2);
+//        kAncestor(root,n1,n2);
+        transformSum(root);
+        preOrder(root);
+
     }
 }

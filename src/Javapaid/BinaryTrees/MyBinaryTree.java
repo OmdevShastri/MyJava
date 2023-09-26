@@ -34,7 +34,7 @@ public class MyBinaryTree {
 
         public static void preOrder(Node root){
             if (root ==null){
-                System.out.print(-1+" ");
+                //System.out.print(-1+" ");
                 return;
             }
             System.out.print(root.data + " ");
@@ -341,6 +341,21 @@ public class MyBinaryTree {
             }
             return max+1;
 
+        }
+
+        public static int transformSum(Node root){
+            if (root ==null){
+                return 0;
+            }
+            int leftChild = transformSum(root.left);
+            int rightChild = transformSum(root.right);
+
+            int data = root.data;
+
+            int newLeft = root.left ==null ? 0 :root.left.data;
+            int newRight = root.right ==null ? 0 :root.right.data;
+            root.data = newLeft +leftChild+newRight+rightChild;
+            return data;
         }
 
     }
