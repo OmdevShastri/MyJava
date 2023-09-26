@@ -47,5 +47,6 @@ public class Main {
 
         int n1 =4, n2 =7;
         System.out.println(lca(root, n1,n2).data);
+        System.out.println(lca2(root, n1,n2).data);
     }
 }
