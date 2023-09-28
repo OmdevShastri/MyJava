@@ -18,6 +18,9 @@ public class BasicsHeaps {
                 int temp = arr.get(x);
                 arr.set(x, arr.get(par));
                 arr.set(par,temp);
+
+                x= par;
+                par = (x-1)/2;
             }
         }
         public int peek(){
@@ -49,7 +52,7 @@ public class BasicsHeaps {
 
             //step 1:  swap 1st an last
             int temp =arr.get(0);
-            arr.set(0,arr.size()-1);
+            arr.set(0, arr.get(arr.size() - 1));
             arr.set(arr.size()-1, temp);
 
             //step 2: delete last
@@ -59,9 +62,20 @@ public class BasicsHeaps {
             heapify(0);
             return data;
         }
+        public boolean isEmpty(){
+            return arr.size()==0;
+        }
+    }
+    public static void main(String[] args) {
+        Heap h = new Heap();
+        h.add(3);
+        h.add(4);
+        h.add(1);
+        h.add(5);
 
-        public static void main(String[] args) {
-
+        while (!h.isEmpty()){
+            System.out.println(h.peek());
+            h.remove();
         }
     }
 }
