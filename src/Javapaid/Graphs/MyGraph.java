@@ -51,8 +51,16 @@ public class MyGraph {
     }
 
     public static void bfs(ArrayList<Edge> [] graph ){
-        Queue<Integer> q = new LinkedList<>();
         boolean [] visit =new boolean[graph.length];
+        for (int i = 0; i < graph.length; i++) {
+            if (!visit[i]){
+                bfsUtil(graph,visit);
+            }
+        }
+    }
+    public static void bfsUtil(ArrayList<Edge> [] graph, boolean[] visit){
+        Queue<Integer> q = new LinkedList<>();
+
         q.add(0);
         while (!q.isEmpty()){
             int curr = q.remove();
@@ -67,7 +75,13 @@ public class MyGraph {
         }
     }
 
-    public static void dfs(ArrayList<Edge>[] graph, int curr, boolean[] visit){
+    public static void dfs(ArrayList<Edge>[] graph){
+        boolean [] vis =new boolean[graph.length];
+        for (int i = 0; i < graph.length; i++) {
+            dfsUtil(graph,i,vis);
+        }
+    }
+    public static void dfsUtil(ArrayList<Edge>[] graph, int curr, boolean[] visit){
         //visit
         System.out.print(curr+" ");
         visit[curr] = true;
@@ -75,7 +89,7 @@ public class MyGraph {
         for (int i = 0; i < graph[curr].size(); i++) {
             Edge e = graph[curr].get(i);
             if (!visit[e.dest]){
-                dfs(graph,e.dest,visit);
+                dfsUtil(graph,e.dest,visit);
             }
         }
     }
@@ -90,7 +104,7 @@ public class MyGraph {
 //            Edge e = graph[2].get(i);
 //            System.out.println(e.dest);
 //        }
-        dfs(graph,0,new boolean[v]);
+//        dfs(graph,0,new boolean[v]);
 
 
 
