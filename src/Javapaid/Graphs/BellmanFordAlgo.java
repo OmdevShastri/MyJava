@@ -26,6 +26,14 @@ public class BellmanFordAlgo {
         graph[3].add(new Edge(3, 4, 4));
         graph[4].add(new Edge(4, 1, -1));
     }
+    protected static void createGraph2(ArrayList<Edge> graph) {
+        graph.add(new Edge(0, 1, 2));
+        graph.add(new Edge(0, 2, 4));
+        graph.add(new Edge(1, 2, -4));
+        graph.add(new Edge(2, 3, 2));
+        graph.add(new Edge(3, 4, 4));
+        graph.add(new Edge(4, 1, -1));
+    }
     public static void bellmanFord(ArrayList<Edge>[] graph,int src){
         int[] dist = new int[graph.length];
         for (int i = 0; i < dist.length; i++) {
@@ -61,10 +69,11 @@ public class BellmanFordAlgo {
 
     public static void main(String[] args) {
         int v = 5;
-        ArrayList<Edge>[] graph = new ArrayList[v]; //null
-        createGraph(graph);
+//        ArrayList<Edge>[] graph = new ArrayList[v]; //null
+        ArrayList<Edge> graph = new ArrayList<>();
+//        createGraph(graph);
         int src =0;
-        bellmanFord(graph,0);
+//        bellmanFord(graph,0);
 
     }
 }
