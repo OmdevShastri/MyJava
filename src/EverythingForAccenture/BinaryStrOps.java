@@ -4,7 +4,7 @@ public class BinaryStrOps {
     public static void main(String[] args) {
         String str = "1C0C1C1A0B1";
         String str2 = "0C1A1B1C1C1B0A0";
-        System.out.println(OperationsBinaryString(str));
+        System.out.println(OperationsBinaryString(str2));
     }
 
     private static int OperationsBinaryString(String str) {
@@ -12,21 +12,17 @@ public class BinaryStrOps {
             return -1;
         }
         String temp=null;
-        int result=(int)str.charAt(0);
+        int result=str.charAt(0)- '0';
 
         for (int i = 1; i < str.length()-1; i+=2) {
-            int a = str.charAt(i+1);
+            int a = str.charAt(i+1)-'0';
             if (str.charAt(i)=='A'){
-                result &= a;
+                result = result & a;
             }else if (str.charAt(i)=='B'){
-                result |= a;
+                result = result | a;
             }else if (str.charAt(i)=='C'){
-                result ^= a;
-            }else
-                return 0;
-
-
-
+                result = result ^ a;
+            }
         }
 
         return result;
