@@ -22,6 +22,9 @@ public class Filename_version {
                 res.add(temp);
             }
         }
+        if (res.isEmpty()) {
+            return -1;
+        }
         res.sort(Integer::compare);
         return res.getLast();
     }
