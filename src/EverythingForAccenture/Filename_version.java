@@ -12,6 +12,9 @@ public class Filename_version {
 
         for (String filename : filenames) {
             int temp=0;
+            if (!filename.contains("file_")) {
+                continue;
+            }
             try{
                 temp = Integer.parseInt(filename.substring(5));
             } catch (NumberFormatException e) {
@@ -29,7 +32,7 @@ public class Filename_version {
         return res.getLast();
     }
     public static void main(String[] args) {
-        String[] str = {"file_1","file_2","file_3","file_f4","file_5"};
+        String[] str = {"file_1","file_2","file_3","file_f4","filr_5"};
         System.out.println(check(str));
         //System.out.println(check(new String[] {}));
     }
